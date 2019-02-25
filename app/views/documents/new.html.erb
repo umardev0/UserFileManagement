@@ -1,0 +1,30 @@
+<div class="container">
+				<div class="row col-xs-12">
+					<div class="aligncenter"><h1 class="jumbotron text-left">SmartPDF Upload</h1></div>
+						<div class="col-xs-12 col-sm-12 col-md-12">
+							<div class="panel panel-primary">
+								<div class="panel-heading">
+									<h3 class="panel-title">Upload File</h3>
+								</div>
+
+								<div class="container">
+									<div class="form-group">
+                  </br>
+                        <%= form_for @document, url: documents_path, html: { multipart: true } do |form| %>
+                        <h5>Document Name</h5>
+                          <%= form.text_field :document_name %>
+                          </br></br>
+                          <%= form.file_field :pdf %>
+                          </br>
+                          <%= form.submit "Upload", :class => "btn btn-primary"%>
+                        <% end %>
+									</div class="form-group">
+								</div>
+
+								<div class="panel-footer">
+									<button type="button" class="btn btn-link"><%= link_to("Home", documents_path) %></button>
+									<button type="button" class="btn btn-link pull-right"><%= link_to('Logout', destroy_user_session_path, method: :delete) %> </button>
+								</div>
+						</div>
+				</div>
+</div>

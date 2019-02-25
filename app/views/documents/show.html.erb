@@ -1,0 +1,33 @@
+<div class="container">
+				<div class="row col-xs-12">
+					<div class="aligncenter"><h1 class="jumbotron text-left">SmartPDF File</h1></div>
+					<form class="col-xs-12 jumbotron blue">
+						<div class="col-xs-12 col-sm-12 col-md-12">
+							<div class="panel panel-primary">
+								<div class="panel-heading">
+									<h3 class="panel-title">File information</h3>
+								</div>
+
+								<div class="container">
+									<div class="form-group">
+										<div class="panel-body">
+											<pre><%= @doc.document_name%></pre>
+
+											<div class="form-group">
+												<%= image_tag("/qrcodes/#{@doc.document_name}#{@doc.id}.png", :class => 'img-thumbnail', :alt => 'QR Code Not Found')%>
+												<!--img src= "" alt="QR Code Not Found" class="img-thumbnail"-->
+											</div>
+
+											<!-- <button type="submit" class="btn btn-primary">Share</button> -->
+										</div>
+									</div class="form-group">
+								</div>
+
+								<div class="panel-footer">
+									<button type="button" class="btn btn-link"><%= link_to 'Home', url_for(:back) %></button>
+									<button type="button" class="btn btn-link pull-right"><%= link_to('Logout', destroy_user_session_path, method: :delete) %></button>
+								</div>
+						</div>
+					</form>
+				</div>
+</div>

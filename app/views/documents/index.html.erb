@@ -1,0 +1,94 @@
+<% @page_title = "All Documents" %>
+<%= javascript_include_tag('home.js') %>
+
+<div class="container">
+				<div class="row col-xs-12">
+					<div class="aligncenter"><h1 class="jumbotron text-left">SmartPDF Home</h1></div>
+					<form class="col-xs-12 jumbotron blue">
+						<div class="col-xs-12 col-sm-12 col-md-12">
+							<div class="panel wnt panel-primary">
+								<div class="panel-heading">
+									<ul class="nav nav-tabs">
+										<li class="active col-xs-4"><a href="#tab1" data-toggle="tab">My Files</a></li>
+										<!-- <li class="col-xs-4"><a href="#tab2" data-toggle="tab">Shared By Me</a></li>
+										<li class="col-xs-4"><a href="#tab3" data-toggle="tab">Shared With Me</a></li> -->
+									</ul>
+								</div>
+								<div class="container">
+									<div class="panel-body">
+										<div class="row">
+											<div class="col-lg-12">
+												<div class="col-md-12">
+													<div class="tab-content">
+														<div class="tab-pane fade in active" id="tab1">
+															<table class="table table-bordered table-hover" id="tab_logic">
+																<thead>
+																	<tr>
+																		<th class="text-left">
+																			My Files
+																		</th>
+																	</tr>
+																</thead>
+																<tbody data-link="row" class="rowlink">
+                                  <% @documents.each do |document| %>
+																		<tr><td>
+																			<%= link_to(document.document_name, document_path(:id => document.id), :class => 'action show') %>
+																		</td></tr>
+                                  <% end %>
+																</tbody>
+															</table>
+														</div>
+														<!-- <div class="tab-pane fade" id="tab2">
+															<table class="table table-bordered table-hover" id="tab_logic">
+																<thead>
+																	<tr>
+																		<th class="text-left">
+																			Shared By Me
+																		</th>
+																	</tr>
+																</thead>
+																<tbody data-link="row" class="rowlink">
+																	<% @by_me.each do |sd| %>
+																		<tr><td>
+																			<%= link_to(sd.document.document_name, document_path(:id => sd.document.id), :class => 'action show') %>
+																		</td></tr>
+                                  <% end %>
+																</tbody>
+															</table>
+														</div>
+														<div class="tab-pane fade" id="tab3">
+															<table class="table table-bordered table-hover" id="tab_logic">
+																<thead>
+																	<tr>
+																		<th class="text-left">
+																			Shared With Me
+																		</th>
+																	</tr>
+																</thead>
+																<tbody data-link="row" class="rowlink">
+																	<% @with_me.each do |sd| %>
+																		<tr><td>
+																			<%= link_to(sd.document.document_name, document_path(:id => sd.document.id), :class => 'action show') %>
+																		</td></tr>
+                                  <% end %>
+																</tbody>
+															</table>
+														</div> -->
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</div>
+								<div class="panel-footer">
+									<button type="button" class="btn btn-link"><%= link_to("Upload File", new_document_path, :class => 'action new') %></button>
+									<button type="button" class="btn btn-link pull-right"><%= link_to('Logout', destroy_user_session_path, method: :delete) %></button>
+								</div>
+							</div>
+						</div>
+
+				</div>
+					</form>
+				</div>
+</div>

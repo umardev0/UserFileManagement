@@ -1,0 +1,5 @@
+AWS_ACCESS_KEY_ID: (Put aws access id here)
+AWS_SECRET_ACCESS_KEY: (put aws secret access key here)
+S3_BUCKET_NAME: (put bucket name here)
+AWS_REGION: (put region here like eu-central-1)
+S3_HOST: (put S3 host here like s3.eu-central-1.amazonaws.com)
