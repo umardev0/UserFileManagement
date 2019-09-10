@@ -34,7 +34,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 # Extra gems added
-gem 'devise', '~> 4.4'
+gem 'devise', '~> 4.7'
 #gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'paperclip', '~> 4.2.4'
